@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src https://formspree.io; img-src 'self' data:;">
+  <title>Anuj Gupta — Senior AI Architect | Enterprise Platform Engineering</title>
+  <meta name="description" content="Senior AI Architect and Enterprise Platform Engineering Leader with 13+ years building production AI platforms, multi-agent systems, and cloud-native architectures at Fortune 500 scale.">
+  <meta property="og:title" content="Anuj Gupta — Senior AI Architect | Enterprise Platform Engineering">
+  <meta property="og:description" content="Designing AI-native architectures at Fortune 500 scale. 13+ years building production systems that serve thousands of developers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anujg21.github.io">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anuj Gupta",
+    "jobTitle": "Senior AI Architect & Enterprise Platform Engineering Leader",
+    "url": "https://anujg21.github.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/gupta-anuj/",
+      "https://github.com/anujg21"
+    ],
+    "knowsAbout": ["Enterprise Architecture", "AI/ML Architecture", "Multi-Agent Systems", "Platform Engineering", "Cloud Architecture", "Kubernetes", "RAG", "LLMs", "MLOps", "FinOps"],
+    "alumniOf": [
+      {"@type": "CollegeOrUniversity", "name": "Rice University"},
+      {"@type": "CollegeOrUniversity", "name": "UC Berkeley"}
+    ],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "name": "AWS Certified DevOps Engineer - Professional"},
+      {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Data Analytics - Specialty"},
+      {"@type": "EducationalOccupationalCredential", "name": "AWS Certified Solutions Architect - Associate"},
+      {"@type": "EducationalOccupationalCredential", "name": "Professional Certificate in Machine Learning & AI, UC Berkeley"}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0B1121;
+      --bg-secondary: #111827;
+      --bg-card: #1A2332;
+      --bg-card-hover: #1F2B3D;
+      --text-primary: #E8EDF5;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --accent: #3B82F6;
+      --accent-glow: rgba(59, 130, 246, 0.15);
+      --accent-warm: #F59E0B;
+      --accent-green: #10B981;
+      --border: rgba(148, 163, 184, 0.1);
+      --border-hover: rgba(59, 130, 246, 0.3);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --max-width: 1200px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-primary: #F8FAFC;
+      --bg-secondary: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #F1F5F9;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #94A3B8;
+      --border: rgba(15, 23, 42, 0.08);
+      --border-hover: rgba(59, 130, 246, 0.3);
+      --accent-glow: rgba(59, 130, 246, 0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11, 17, 33, 0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    [data-theme="light"] nav { background: rgba(248, 250, 252, 0.85); }
+
+    .nav-inner {
+      max-width: var(--max-width); margin: 0 auto;
+      padding: 0 2rem; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-display); font-size: 1.25rem;
+      font-weight: 700; color: var(--text-primary);
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-secondary); text-decoration: none;
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em;
+      transition: color var(--transition); text-transform: uppercase;
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .theme-toggle {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 8px; padding: 0.5rem; cursor: pointer;
+      color: var(--text-secondary); font-size: 1rem;
+      transition: var(--transition); display: flex; align-items: center;
+    }
+    .theme-toggle:hover { border-color: var(--border-hover); color: var(--accent); }
+
+    .mobile-toggle {
+      display: none; background: none; border: none;
+      color: var(--text-primary); font-size: 1.5rem; cursor: pointer;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 6rem 2rem 4rem;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%;
+      width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: var(--max-width); margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-mono); font-size: 0.8rem;
+      color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 1.5rem; padding: 0.4rem 1rem;
+      background: var(--accent-glow); border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 100px;
+    }
+    .hero-label::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent); animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .hero h1 {
+      font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 .accent { color: var(--accent); }
+    .hero-desc {
+      font-size: 1.125rem; color: var(--text-secondary);
+      line-height: 1.8; margin-bottom: 2.5rem; max-width: 540px;
+    }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: #fff; padding: 0.875rem 2rem;
+      border-radius: 10px; text-decoration: none; font-weight: 600;
+      font-size: 0.95rem; transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4); }
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    /* Hero metrics strip */
+    .hero-metrics {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .metric-item {
+      text-align: left; padding: 1rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .metric-value {
+      font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+      color: var(--text-primary); line-height: 1;
+    }
+    .metric-label {
+      font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+
+    /* Hero visual */
+    .hero-visual {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-grid {
+      width: 100%; aspect-ratio: 1; position: relative;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .hero-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 1.5rem;
+      transition: var(--transition);
+    }
+    .hero-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .hero-card-icon {
+      width: 40px; height: 40px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; margin-bottom: 0.75rem;
+    }
+    .hero-card h3 {
+      font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem;
+      color: var(--text-primary);
+    }
+    .hero-card p {
+      font-size: 0.78rem; color: var(--text-muted); line-height: 1.5;
+    }
+    .hc-ai .hero-card-icon { background: rgba(59, 130, 246, 0.12); color: var(--accent); }
+    .hc-platform .hero-card-icon { background: rgba(16, 185, 129, 0.12); color: var(--accent-green); }
+    .hc-cloud .hero-card-icon { background: rgba(245, 158, 11, 0.12); color: var(--accent-warm); }
+    .hc-finops .hero-card-icon { background: rgba(168, 85, 247, 0.12); color: #A855F7; }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 6rem 2rem; }
+    .section-inner { max-width: var(--max-width); margin: 0 auto; }
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.75rem;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1.05rem; color: var(--text-secondary);
+      max-width: 640px; line-height: 1.8; margin-bottom: 3rem;
+    }
+
+    /* ===== PHILOSOPHY ===== */
+    .philosophy { background: var(--bg-secondary); }
+    .philosophy-content {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .philosophy-text p {
+      color: var(--text-secondary); line-height: 1.9;
+      margin-bottom: 1.25rem; font-size: 1rem;
+    }
+    .philosophy-pillars { display: flex; flex-direction: column; gap: 1rem; }
+    .pillar {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem; transition: var(--transition);
+    }
+    .pillar:hover { border-color: var(--border-hover); }
+    .pillar-num {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 0.5rem;
+    }
+    .pillar h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .pillar p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+    /* ===== CASE STUDIES ===== */
+    .case-studies-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    }
+    .case-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem; transition: var(--transition);
+      cursor: pointer; position: relative; overflow: hidden;
+    }
+    .case-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+    .case-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-green));
+      opacity: 0; transition: opacity var(--transition);
+    }
+    .case-card:hover::after { opacity: 1; }
+    .case-tag {
+      display: inline-block; font-family: var(--font-mono);
+      font-size: 0.7rem; color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.08em; padding: 0.3rem 0.75rem;
+      background: var(--accent-glow); border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .case-card h3 {
+      font-family: var(--font-display); font-size: 1.25rem;
+      font-weight: 600; margin-bottom: 0.75rem; line-height: 1.3;
+    }
+    .case-card > p {
+      font-size: 0.9rem; color: var(--text-secondary);
+      line-height: 1.7; margin-bottom: 1.25rem;
+    }
+    .case-metrics {
+      display: flex; gap: 1.5rem; padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .case-metric-val {
+      font-family: var(--font-display); font-size: 1.4rem;
+      font-weight: 700; color: var(--accent); line-height: 1;
+    }
+    .case-metric-label {
+      font-size: 0.72rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .case-tech {
+      display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem;
+    }
+    .case-tech span {
+      font-family: var(--font-mono); font-size: 0.68rem;
+      color: var(--text-muted); background: var(--bg-primary);
+      padding: 0.2rem 0.6rem; border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .featured-badge {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      font-family: var(--font-mono); font-size: 0.65rem;
+      color: var(--accent-warm); background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      padding: 0.2rem 0.6rem; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    /* ===== EXPERTISE MAP ===== */
+    .expertise { background: var(--bg-secondary); }
+    .expertise-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+    }
+    .exp-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.75rem; transition: var(--transition);
+    }
+    .exp-card:hover { border-color: var(--border-hover); }
+    .exp-icon {
+      font-size: 1.5rem; margin-bottom: 1rem;
+      width: 48px; height: 48px; display: flex;
+      align-items: center; justify-content: center;
+      border-radius: 12px;
+    }
+    .exp-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .exp-tags {
+      display: flex; flex-wrap: wrap; gap: 0.35rem;
+    }
+    .exp-tags span {
+      font-size: 0.75rem; color: var(--text-muted);
+      background: var(--bg-primary); padding: 0.25rem 0.6rem;
+      border-radius: 6px; border: 1px solid var(--border);
+    }
+
+    /* ===== CREDENTIALS ===== */
+    .cred-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    }
+    .cred-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.75rem; transition: var(--transition);
+    }
+    .cred-card:hover { border-color: var(--border-hover); }
+    .cred-type {
+      font-family: var(--font-mono); font-size: 0.7rem;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.75rem;
+    }
+    .cred-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .cred-card .institution { font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0.25rem; }
+    .cred-card .cred-date { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ===== GITHUB ===== */
+    .github-section { background: var(--bg-secondary); }
+    .github-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .gh-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 1.5rem; transition: var(--transition);
+      text-decoration: none; color: inherit; display: block;
+    }
+    .gh-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .gh-card h3 { font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .gh-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+    .gh-lang {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      margin-top: 0.75rem; font-size: 0.75rem; color: var(--text-muted);
+    }
+    .gh-lang-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    /* ===== CONTACT ===== */
+    .contact-inner {
+      text-align: center; max-width: 600px; margin: 0 auto;
+    }
+    .contact-links {
+      display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg-card);
+      color: var(--text-primary); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; transition: var(--transition);
+    }
+    .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+    .contact-link svg { width: 18px; height: 18px; }
+
+    /* ===== CONTACT FORM ===== */
+    .contact-form {
+      max-width: 480px; margin: 2rem auto 0; text-align: left;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.75rem 1rem; margin-bottom: 0.75rem;
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 10px; color: var(--text-primary);
+      font-family: var(--font-body); font-size: 0.9rem;
+      transition: var(--transition);
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-form button {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: #fff; padding: 0.75rem 2rem;
+      border: none; border-radius: 10px; font-weight: 600;
+      font-size: 0.9rem; cursor: pointer; transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+    }
+    .contact-form button:hover {
+      transform: translateY(-2px); box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 2rem; text-align: center;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem; color: var(--text-muted);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-metrics { grid-template-columns: repeat(2, 1fr); }
+      .philosophy-content { grid-template-columns: 1fr; }
+      .case-studies-grid { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+      .cred-grid { grid-template-columns: 1fr; }
+      .github-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 4rem 1.25rem; }
+      .hero { padding: 5rem 1.25rem 3rem; }
+      .hero-metrics { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .expertise-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Anuj Gupta</a>
+    <div class="nav-links">
+      <a href="#philosophy">Philosophy</a>
+      <a href="#work">Case Studies</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀️</button>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-label">Available for Enterprise Architect, AI Architect & Distinguished Engineer roles</div>
+      <h1>
+        Designing <span class="accent">AI-native architectures</span> at Fortune&nbsp;500 scale.
+      </h1>
+      <p class="hero-desc">
+        I build the platforms that let enterprises ship AI to production. From multi-agent systems and RAG pipelines to internal developer platforms serving hundreds of engineers — I bridge the gap between innovation and operational reality.
+      </p>
+      <a href="#work" class="hero-cta">
+        View Case Studies
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <div class="hero-metrics">
+        <div class="metric-item fade-in stagger-1">
+          <div class="metric-value">13+</div>
+          <div class="metric-label">Years Experience</div>
+        </div>
+        <div class="metric-item fade-in stagger-2">
+          <div class="metric-value">40%</div>
+          <div class="metric-label">Cost Reduction</div>
+        </div>
+        <div class="metric-item fade-in stagger-3">
+          <div class="metric-value">60+</div>
+          <div class="metric-label">Apps Migrated</div>
+        </div>
+        <div class="metric-item fade-in stagger-4">
+          <div class="metric-value">18+</div>
+          <div class="metric-label">Team Size Led</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-grid">
+        <div class="hero-card hc-ai fade-in stagger-1">
+          <div class="hero-card-icon">🤖</div>
+          <h3>AI/ML Architecture</h3>
+          <p>Multi-agent systems, RAG, LLMs, production MLOps pipelines</p>
+        </div>
+        <div class="hero-card hc-platform fade-in stagger-2">
+          <div class="hero-card-icon">⚡</div>
+          <h3>Platform Engineering</h3>
+          <p>Internal Developer Platforms, self-service infrastructure, DevEx</p>
+        </div>
+        <div class="hero-card hc-cloud fade-in stagger-3">
+          <div class="hero-card-icon">☁️</div>
+          <h3>Cloud Architecture</h3>
+          <p>AWS, Azure, Kubernetes, serverless, multi-cloud strategy</p>
+        </div>
+        <div class="hero-card hc-finops fade-in stagger-4">
+          <div class="hero-card-icon">📊</div>
+          <h3>FinOps & Governance</h3>
+          <p>Cost optimization, architecture governance, compliance</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARCHITECTURE PHILOSOPHY ===== -->
+<section class="philosophy" id="philosophy">
+  <div class="section-inner">
+    <div class="section-label">Architecture Philosophy</div>
+    <div class="section-title">How I think about building systems</div>
+    <div class="philosophy-content">
+      <div class="philosophy-text fade-in">
+        <p>
+          My career has been a deliberate climb through every layer of the enterprise stack — from managing 1,200+ servers and engineering HA database clusters, to building CI/CD platforms, to designing internal developer platforms, to now architecting multi-agent AI systems that automate what used to take entire teams.
+        </p>
+        <p>
+          This trajectory shapes how I architect: I treat every AI platform, every developer tool, and every cloud decision as a <strong>product with internal customers</strong>. Platform-as-a-Product isn't a buzzword in my work — it's the operating model that drove 50% faster onboarding, 40% cost reductions, and production AI systems that started as 48-hour hackathon prototypes.
+        </p>
+        <p>
+          I believe the best architectures are <strong>opinionated enough to accelerate the 80% and flexible enough to accommodate the 20%</strong>. Golden paths, not golden cages. Self-service, not ticket queues. Guardrails, not gates.
+        </p>
+      </div>
+      <div class="philosophy-pillars fade-in stagger-2">
+        <div class="pillar">
+          <div class="pillar-num">Principle 01</div>
+          <h3>Innovation must ship</h3>
+          <p>I've taken two hackathon wins from 48-hour prototypes to production systems. Architecture that doesn't reach users is just a diagram.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Principle 02</div>
+          <h3>Platforms are products</h3>
+          <p>Internal platforms succeed when treated like products — with user research, adoption metrics, self-service UX, and continuous iteration.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Principle 03</div>
+          <h3>Cost is a first-class constraint</h3>
+          <p>FinOps isn't an afterthought. Reducing clusters by ~68% wasn't just optimization — it was an architectural decision that reshaped governance.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Principle 04</div>
+          <h3>Build the bridge, then cross it</h3>
+          <p>I span the architect elevator — from hands-on Python and multi-agent code to boardroom-level strategy and executive stakeholder alignment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CASE STUDIES ===== -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-label">Featured Work</div>
+    <div class="section-title">Architecture case studies</div>
+    <p class="section-desc">Enterprise-scale projects delivered at Fortune 500 companies. Details sanitized to respect confidentiality — focused on architectural decisions, patterns, and quantified impact.</p>
+
+    <div class="case-studies-grid">
+
+      <div class="case-card fade-in">
+        <span class="featured-badge">★ Hackathon → Production</span>
+        <span class="case-tag">Generative AI · RAG</span>
+        <h3>Enterprise RAG Knowledge Platform on Azure OpenAI</h3>
+        <p>Conceived and built an end-to-end RAG pipeline that ingests diverse ServiceNow knowledge base datasets, generates vector embeddings, and provides intelligent summarization — making thousands of enterprise articles instantly accessible. Won company hackathon, then championed from prototype to production deployment.</p>
+        <div class="case-metrics">
+          <div><div class="case-metric-val">1st</div><div class="case-metric-label">Place Hackathon</div></div>
+          <div><div class="case-metric-val">Prod</div><div class="case-metric-label">Deployed</div></div>
+          <div><div class="case-metric-val">E2E</div><div class="case-metric-label">Architecture</div></div>
+        </div>
+        <div class="case-tech">
+          <span>Azure OpenAI</span><span>RAG</span><span>Vector DB</span><span>ServiceNow</span><span>Python</span><span>Embeddings</span>
+        </div>
+      </div>
+
+      <div class="case-card fade-in stagger-1">
+        <span class="case-tag">Multi-Agent AI · Security</span>
+        <h3>Production Multi-Agent AI Platform for Security Operations</h3>
+        <p>Architected and led an 8-person team to deliver a serverless multi-agent AI system that automates vulnerability triage at enterprise scale. Designed agent orchestration patterns, LLM-driven decision flows, and production reliability engineering for AI-powered security automation.</p>
+        <div class="case-metrics">
+          <div><div class="case-metric-val">80%</div><div class="case-metric-label">Automated Triage</div></div>
+          <div><div class="case-metric-val">60%</div><div class="case-metric-label">MTTR Reduction</div></div>
+          <div><div class="case-metric-val">35%</div><div class="case-metric-label">Fewer Open Findings</div></div>
+        </div>
+        <div class="case-tech">
+          <span>AWS</span><span>Serverless</span><span>Multi-Agent</span><span>LLMs</span><span>Python</span><span>Lambda</span>
+        </div>
+      </div>
+
+      <div class="case-card fade-in stagger-2">
+        <span class="featured-badge">★ Hackathon Winner</span>
+        <span class="case-tag">Agentic AI · Operations</span>
+        <h3>LLM-Powered Operational Intelligence Agent</h3>
+        <p>Designed and personally developed a multi-agent system using AutoGen for automated Kubernetes container/pod failure diagnosis and database failure analysis. Enables L1 support teams with AI-assisted incident resolution by reasoning over operational logs in real-time. Currently advancing from POC to production.</p>
+        <div class="case-metrics">
+          <div><div class="case-metric-val">1st</div><div class="case-metric-label">Place Hackathon</div></div>
+          <div><div class="case-metric-val">POC</div><div class="case-metric-label">→ Production</div></div>
+          <div><div class="case-metric-val">K8s</div><div class="case-metric-label">+ DB Diagnosis</div></div>
+        </div>
+        <div class="case-tech">
+          <span>AutoGen</span><span>AWS Bedrock</span><span>LangGraph</span><span>Kubernetes</span><span>Python</span>
+        </div>
+      </div>
+
+      <div class="case-card fade-in stagger-3">
+        <span class="case-tag">Platform Engineering</span>
+        <h3>Kubernetes Multi-Tenancy & FinOps Optimization</h3>
+        <p>Spearheaded an enterprise-wide Kubernetes consolidation strategy, redesigning cluster architecture and reducing the total number of clusters by ~68% through shared multi-tenant environments. Implemented Karpenter dynamic provisioning and GitOps (FluxCD) to enable self-service while centralizing governance.</p>
+        <div class="case-metrics">
+          <div><div class="case-metric-val">~68%</div><div class="case-metric-label">Clusters Reduced</div></div>
+          <div><div class="case-metric-val">40%</div><div class="case-metric-label">Cost Reduction</div></div>
+          <div><div class="case-metric-val">200+</div><div class="case-metric-label">Developers Served</div></div>
+        </div>
+        <div class="case-tech">
+          <span>Kubernetes</span><span>Karpenter</span><span>FluxCD</span><span>GitOps</span><span>Terraform</span><span>FinOps</span>
+        </div>
+      </div>
+
+      <div class="case-card fade-in">
+        <span class="case-tag">Internal Developer Platform</span>
+        <h3>Enterprise Internal Developer Platform (IDP)</h3>
+        <p>Defined the vision, reference architecture, and multi-year roadmap for a company-wide IDP. Led a global team of 10 building self-service capabilities for infrastructure provisioning, CI/CD orchestration, and security — transforming how the broader engineering organization ships software.</p>
+        <div class="case-metrics">
+          <div><div class="case-metric-val">50%</div><div class="case-metric-label">Faster Onboarding</div></div>
+          <div><div class="case-metric-val">10</div><div class="case-metric-label">Global Team</div></div>
+          <div><div class="case-metric-val">Self-Serve</div><div class="case-metric-label">Infra + CI/CD</div></div>
+        </div>
+        <div class="case-tech">
+          <span>AWS</span><span>Terraform</span><span>Kubernetes</span><span>CI/CD</span><span>GitOps</span><span>DevSecOps</span>
+        </div>
+      </div>
+
+      <div class="case-card fade-in stagger-1">
+        <span class="case-tag">Cloud Migration · Transformation</span>
+        <h3>Enterprise Cloud Migration of 60+ Applications</h3>
+        <p>Directed a 9-person team to design and build a proprietary DevOps platform enabling the migration of 60+ business applications from on-premises to AWS. Standardized CI/CD practices, established architectural standards, and enabled zero-downtime cutovers across the enterprise.</p>
+        <div class="case-metrics">
+          <div><div class="case-metric-val">60+</div><div class="case-metric-label">Apps Migrated</div></div>
+          <div><div class="case-metric-val">90%</div><div class="case-metric-label">Fewer Deploy Errors</div></div>
+          <div><div class="case-metric-val">4x</div><div class="case-metric-label">Release Frequency</div></div>
+        </div>
+        <div class="case-tech">
+          <span>AWS</span><span>Docker</span><span>Jenkins</span><span>Terraform</span><span>IaC</span><span>CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERTISE MAP ===== -->
+<section class="expertise" id="expertise">
+  <div class="section-inner">
+    <div class="section-label">Technical Depth</div>
+    <div class="section-title">Expertise domains</div>
+    <p class="section-desc">Not a skills tag cloud — a map of domains where I architect, build, and lead at production scale.</p>
+
+    <div class="expertise-grid">
+      <div class="exp-card fade-in">
+        <div class="exp-icon" style="background:rgba(59,130,246,0.1); color:var(--accent);">🧠</div>
+        <h3>AI/ML & Generative AI</h3>
+        <div class="exp-tags">
+          <span>Multi-Agent Systems</span><span>RAG Pipelines</span><span>LLMs</span><span>AutoGen</span><span>LangGraph</span><span>AWS Bedrock</span><span>Azure OpenAI</span><span>Prompt Engineering</span><span>Context Engineering</span><span>Fine-Tuning</span><span>MLOps</span><span>NLP</span><span>Transformers</span>
+        </div>
+      </div>
+      <div class="exp-card fade-in stagger-1">
+        <div class="exp-icon" style="background:rgba(16,185,129,0.1); color:var(--accent-green);">☁️</div>
+        <h3>Cloud & Infrastructure</h3>
+        <div class="exp-tags">
+          <span>AWS</span><span>Azure</span><span>Kubernetes (EKS)</span><span>Serverless</span><span>Lambda</span><span>Fargate</span><span>Terraform</span><span>Infrastructure as Code</span><span>Docker</span><span>Karpenter</span><span>Multi-Cloud</span>
+        </div>
+      </div>
+      <div class="exp-card fade-in stagger-2">
+        <div class="exp-icon" style="background:rgba(245,158,11,0.1); color:var(--accent-warm);">🔧</div>
+        <h3>Platform Engineering</h3>
+        <div class="exp-tags">
+          <span>Internal Developer Platform</span><span>GitOps (FluxCD)</span><span>CI/CD</span><span>DevSecOps</span><span>Jenkins</span><span>Self-Service Infra</span><span>Developer Experience</span><span>Golden Paths</span>
+        </div>
+      </div>
+      <div class="exp-card fade-in stagger-3">
+        <div class="exp-icon" style="background:rgba(168,85,247,0.1); color:#A855F7;">📐</div>
+        <h3>Architecture & Strategy</h3>
+        <div class="exp-tags">
+          <span>Enterprise Architecture</span><span>TOGAF</span><span>Solution Architecture</span><span>Microservices</span><span>Technology Roadmapping</span><span>Architecture Governance</span><span>Design Patterns</span><span>Java</span>
+        </div>
+      </div>
+      <div class="exp-card fade-in stagger-4">
+        <div class="exp-icon" style="background:rgba(236,72,153,0.1); color:#EC4899;">💰</div>
+        <h3>FinOps & Leadership</h3>
+        <div class="exp-tags">
+          <span>FinOps</span><span>Cost Optimization</span><span>Global Delivery</span><span>Cross-Functional Leadership</span><span>Stakeholder Management</span><span>Change Management</span><span>SDLC Optimization</span>
+        </div>
+      </div>
+      <div class="exp-card fade-in">
+        <div class="exp-icon" style="background:rgba(20,184,166,0.1); color:#14B8A6;">🗄️</div>
+        <h3>Data & Observability</h3>
+        <div class="exp-tags">
+          <span>PostgreSQL</span><span>MongoDB</span><span>DynamoDB</span><span>Redshift</span><span>Neo4j</span><span>Elasticsearch</span><span>Prometheus</span><span>Grafana</span><span>CloudWatch</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CREDENTIALS ===== -->
+<section id="credentials">
+  <div class="section-inner">
+    <div class="section-label">Credentials</div>
+    <div class="section-title">Education & Certifications</div>
+    <p class="section-desc">Continuous investment in technical depth — from formal CS education to hands-on AI/ML specialization and cloud architecture certifications.</p>
+
+    <div class="cred-grid">
+      <div class="cred-card fade-in">
+        <div class="cred-type">Education — In Progress</div>
+        <h3>Master of Science in Computer Science</h3>
+        <div class="institution">Rice University, Houston, TX</div>
+        <div class="cred-date">Expected May 2026 — Coursework: NLP, Machine Learning, Statistics, Algorithms</div>
+      </div>
+      <div class="cred-card fade-in stagger-1">
+        <div class="cred-type">Professional Certificate</div>
+        <h3>Machine Learning & Artificial Intelligence</h3>
+        <div class="institution">UC Berkeley Executive Education</div>
+        <div class="cred-date">April 2023 — Fine-Tuning, NLP, Deep Learning, Prompt Engineering</div>
+      </div>
+      <div class="cred-card fade-in stagger-2">
+        <div class="cred-type">Education</div>
+        <h3>Bachelor of Engineering — Electronics & Telecom</h3>
+        <div class="institution">Chhattisgarh Swami Vivekanand Technical University, India</div>
+        <div class="cred-date">July 2011</div>
+      </div>
+      <div class="cred-card fade-in stagger-3">
+        <div class="cred-type">AWS Certifications</div>
+        <h3>DevOps Professional · Data Analytics Specialty · Solutions Architect Associate</h3>
+        <div class="institution">Amazon Web Services</div>
+        <div class="cred-date">Active — 3 certifications</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GITHUB ===== -->
+<section class="github-section" id="github">
+  <div class="section-inner">
+    <div class="section-label">Technical Exploration</div>
+    <div class="section-title">Applied AI/ML & open-source</div>
+    <p class="section-desc">Hands-on ML implementations from UC Berkeley's ML/AI program and Rice University coursework. For production-scale enterprise work, see case studies above.</p>
+
+    <div class="github-grid">
+      <a href="https://github.com/anujg21" target="_blank" rel="noopener noreferrer" class="gh-card fade-in">
+        <h3>UC Berkeley ML/AI Projects</h3>
+        <p>Applied machine learning implementations including supervised/unsupervised learning, NLP, and deep learning models from the Professional Certificate program.</p>
+        <div class="gh-lang"><span class="gh-lang-dot" style="background:#3572A5;"></span> Python · Jupyter</div>
+      </a>
+      <a href="https://github.com/anujg21" target="_blank" rel="noopener noreferrer" class="gh-card fade-in stagger-1">
+        <h3>Rice University CS Projects</h3>
+        <p>Graduate-level coursework covering advanced algorithms, NLP, distributed systems, and transformer-based model implementations.</p>
+        <div class="gh-lang"><span class="gh-lang-dot" style="background:#3572A5;"></span> Python · Research</div>
+      </a>
+      <a href="https://github.com/anujg21" target="_blank" rel="noopener noreferrer" class="gh-card fade-in stagger-2">
+        <h3>Infrastructure & IaC</h3>
+        <p>Terraform templates, CloudFormation starters, and DevOps automation patterns from enterprise cloud architecture work.</p>
+        <div class="gh-lang"><span class="gh-lang-dot" style="background:#844FBA;"></span> HCL · CloudFormation · Typescripts</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="section-inner contact-inner">
+    <div class="section-label">Get in Touch</div>
+    <div class="section-title">Let's build something extraordinary</div>
+    <p class="section-desc" style="margin-left:auto;margin-right:auto;">
+      Available for Enterprise Architect, AI Architect, and Distinguished Engineer roles. Open to conversations about enterprise AI strategy, platform engineering, and technical leadership.
+    </p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/gupta-anuj/" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/anujg21" target="_blank" rel="noopener noreferrer" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="./Anuj_Gupta_Resume.pdf" download class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Anuj Gupta. Built with intention, not templates.</p>
+</footer>
+
+<script>
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    document.querySelector('.theme-toggle').textContent = next === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', next);
+  }
+
+  // Load saved theme
+  const saved = localStorage.getItem('theme');
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    document.querySelector('.theme-toggle').textContent = saved === 'dark' ? '☀️' : '🌙';
+  }
+
+  // Mobile nav toggle
+  function toggleMobileNav() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '64px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'var(--bg-secondary)';
+      links.style.padding = '1.5rem 2rem';
+      links.style.borderBottom = '1px solid var(--border)';
+      links.style.gap = '1.25rem';
+    }
+  }
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
