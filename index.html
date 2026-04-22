@@ -332,12 +332,19 @@
       .case-top { grid-template-columns: 1fr; }
       .case-stats { flex-direction: row; text-align: left; padding-top: 0; }
       .narrative { grid-template-columns: 1fr; }
+      .nb-txt { font-size: 0.95rem; line-height: 1.75; }
+      .nb { padding: 1.25rem; }
+      .case-lesson { padding: 1.25rem; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
     }
     @media (max-width: 600px) {
       .hero-h1 { font-size: 2.6rem; }
+      .hero-kicker { font-size: 0.6rem; gap: 0.6rem; flex-wrap: wrap; }
       .thinking, .cases, .pov, .connect { padding: 5rem 0; }
       .case { padding: 3.5rem 0; }
+      .pos-title { font-size: 1.15rem; }
+      .pos-text { font-size: 0.9rem; }
+      .pov-p { font-size: 0.95rem; }
     }
   </style>
 </head>
@@ -364,7 +371,7 @@
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-kicker">AI Platform Architect &nbsp;·&nbsp; Tampa, FL &nbsp;·&nbsp; Rice University M.S. Computer Science 2026</div>
+    <div class="hero-kicker">AI Platform Architect &nbsp;·&nbsp; Tampa, FL &nbsp;·&nbsp; Rice University M.S. CS 2026</div>
     <h1 class="hero-h1">
       The gap between<br>
       <strong>AI that works in demos</strong><br>
@@ -374,7 +381,7 @@
   </div>
   <div class="hero-foot">
     <p class="hero-sub">
-      I've spent 14 years inside that gap — not as an advisor who diagrams it, but as the person who <strong>builds the platforms, leads the teams, and ships the systems</strong> that close it at Fortune 500 scale.
+      I've spent 14 years inside that gap — <strong>building the platforms, leading the teams, and shipping the systems</strong> that close it at Fortune 500 scale.
     </p>
     <div class="scroll-ind">
       <div class="scroll-bar"></div>
@@ -393,24 +400,24 @@
     <div class="position reveal">
       <div class="pos-n">I</div>
       <div>
-        <h3 class="pos-title">Platform engineers are the <em>silent multipliers</em> of every AI initiative — and they're almost always an afterthought.</h3>
-        <p class="pos-text">Most AI investment flows into models and ML engineers. The platform underneath is handed to a team already stretched thin. The answer isn't more tooling — it's treating the platform as a <strong>product with internal customers</strong>, with adoption metrics and a roadmap. When you don't, you get ticket backlogs that destroy adoption and turn every deployment into a negotiation. The frontier of this today is <strong>AI-native developer tooling</strong>: MCP servers and natural language interfaces that let engineers provision, operate, and debug infrastructure without ever leaving their workflow.</p>
+        <h3 class="pos-title">Platform thinking is how AI teams move from building agents to building <em>governable</em> agents.</h3>
+        <p class="pos-text">Teams were focused on agents, skills, plugins — writing prompts. No one was thinking about governance, cost monitoring, prompt optimization, testing. I built guardrails, observability, and evaluation frameworks like DeepEvals into the platform itself. When these become built-in options instead of add-ons, teams adopt them naturally.</p>
       </div>
     </div>
 
     <div class="position reveal">
       <div class="pos-n">II</div>
       <div>
-        <h3 class="pos-title">Multi-agent AI is being sold as magic. The <em>hard part isn't the agents</em> — it's the orchestration substrate.</h3>
-        <p class="pos-text">You can build the agents in weeks. Building the substrate that lets them run safely in production — with audit trails, cost attribution, deterministic testing, graceful failure modes — is the real work. This isn't an argument against multi-agent AI. It's an argument for building the substrate first.</p>
+        <h3 class="pos-title">Multi-agent AI is being sold as magic. The <em>hard part isn't the agents</em> — it's the substrate.</h3>
+        <p class="pos-text">You can build agents in weeks. Building the substrate that lets them run safely in production takes months — audit trails, cost attribution, deterministic testing, graceful failure modes. This isn't anti-agent. It's pro-substrate-first.</p>
       </div>
     </div>
 
     <div class="position reveal">
       <div class="pos-n">III</div>
       <div>
-        <h3 class="pos-title">FinOps isn't a cost-cutting exercise. Done right, it's an <em>architectural forcing function.</em></h3>
-        <p class="pos-text">The cost reduction was the headline. The real outcome was an architecture we could actually govern — consistent security baselines, predictable upgrades, a platform team that could reason about the whole system. Security teams can't audit 140 different cluster configurations, but they can audit 45. If your FinOps work isn't also simplifying your architecture, you're optimizing the wrong thing.</p>
+        <h3 class="pos-title">FinOps isn't cost-cutting. Done right, it's an <em>architectural forcing function.</em></h3>
+        <p class="pos-text">Cost reduction was the headline. The real outcome: an architecture that could actually be maintained and evolved by the team. When FinOps forces you to consolidate and standardize, governance becomes possible. If your FinOps work isn't also simplifying architecture, you're missing the point — and probably optimizing the wrong layer.</p>
       </div>
     </div>
   </div>
@@ -450,7 +457,7 @@
         </div>
         <div class="nb">
           <div class="nb-lbl">The tradeoff</div>
-          <div class="nb-txt">Substrate-first delays visible results. I argued that teams skipping this step will rebuild it later at 3× the cost — under pressure, with less time. That framing bought the time we needed.</div>
+          <div class="nb-txt">Substrate-first delays visible results. I made the case: teams skipping this step rebuild later at 3× cost, under pressure. That framing bought the time.</div>
         </div>
       </div>
       <div class="case-lesson">
@@ -484,11 +491,12 @@
         </div>
         <div class="nb">
           <div class="nb-lbl">The decision</div>
-          <div class="nb-txt">The <strong>Internal Developer Platform</strong> was the bigger initiative — a company-wide self-service infrastructure platform I designed and led. Container management was its first major delivery: an in-house EKS cluster lifecycle platform with automated provisioning, GitOps-based config, and Karpenter for dynamic compute. Kubernetes consolidation — reducing the cluster estate by ~68% — arrived at exactly the right moment to prove the platform's value. The case: vendor lock-in compounds silently. Build the abstraction now or pay in flexibility later.</div>
+          <div class="nb-txt">The <strong>Internal Developer Platform</strong> was the bigger initiative I designed and led — a company-wide self-service infrastructure platform. Container management was its first major delivery: in-house EKS lifecycle management with automated provisioning, GitOps-based config, and Karpenter for dynamic compute. Kubernetes consolidation (reducing cluster estate by ~68%) proved the platform's value at exactly the right moment.</div>
+          <div class="nb-txt" style="margin-top: 0.75rem;">The case: vendor lock-in compounds silently. Build the abstraction now or pay in flexibility later.</div>
         </div>
         <div class="nb">
           <div class="nb-lbl">The tradeoff</div>
-          <div class="nb-txt">In-house means owning every EKS upgrade, every Karpenter API change, every new security baseline. I chose ownership over convenience — for platform primitives, that's always the right trade.</div>
+          <div class="nb-txt">In-house means owning every EKS upgrade, every Karpenter change, every baseline update. For platform primitives, ownership always beats convenience.</div>
         </div>
       </div>
       <div class="case-lesson">
@@ -526,7 +534,7 @@
         </div>
         <div class="nb">
           <div class="nb-lbl">The tradeoff</div>
-          <div class="nb-txt">Owning the stack means owning maintenance. For use cases where wrong answers send engineers down wrong runbooks at 2am, I take precision over convenience.</div>
+          <div class="nb-txt">Owning the stack means owning maintenance. When wrong answers send engineers down wrong runbooks at 2am, precision beats convenience every time.</div>
         </div>
       </div>
       <div class="case-lesson">
@@ -548,15 +556,15 @@
       <h2 class="s-title">On the AI platform<br>most teams will <em>build wrong.</em></h2>
     </div>
     <div class="pov-body reveal d1">
-      <p class="pov-p">The most interesting work in enterprise AI right now isn't model selection — it's the <strong>governance, evaluation, and monitoring layer</strong> around LLM consumption. That's where behavior becomes predictable, costs become attributable, and AI actually earns trust at scale.</p>
+      <p class="pov-p">The interesting work in enterprise AI right now isn't model selection. It's <strong>governance, evaluation, and monitoring</strong> around LLM consumption. That's where behavior becomes predictable, costs become attributable, and AI earns trust at scale.</p>
 
       <div class="pov-pull">The opportunity isn't hosting models. It's building the frameworks that make LLM consumption safe, measurable, and improvable.</div>
 
-      <p class="pov-p">What's missing: evaluation pipelines that catch regressions before users do. Cost attribution that shows which prompts burn money. Guardrails that prevent PII leakage without blocking legitimate use. Monitoring that surfaces when responses degrade. Teams that ignore this layer are solving yesterday's problem — I've built parts of this stack, and the hardest part is never the tooling.</p>
+      <p class="pov-p">What's missing: evaluation pipelines that catch regressions before users do. Cost attribution that shows which prompts burn money. Guardrails that prevent PII leakage. Monitoring that surfaces when responses degrade. Teams skipping this layer are solving yesterday's problem. I've built parts of this, and the hardest part is never the tooling.</p>
 
-      <div class="pov-pull">The hardest part isn't technical. It's getting security, compliance, and engineering to agree on what "production-ready" means before the first API call ships.</div>
+      <div class="pov-pull">The hardest part isn't technical. It's getting security, compliance, and eng to agree on "production-ready" before the first API call ships.</div>
 
-      <p class="pov-p">The next challenges are systems problems — consistency across multi-agent workflows, graceful degradation when LLM chains fail, cost controls that don't break user experience. Solving them takes depth in both distributed systems and production AI. That's the substrate I build.</p>
+      <p class="pov-p">The next challenges are systems problems: consistency across multi-agent workflows, graceful degradation in LLM chains, cost controls that don't break UX. Solving them takes depth in both systems engineering and production AI. That's the substrate I build.</p>
     </div>
   </div>
 </section>
